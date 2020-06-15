@@ -4,8 +4,6 @@
 
 <!-- Mobile Specific Meta -->
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!-- Favicon-->
-<link rel="shortcut icon" href="img/fav.png">
 <!-- Author Meta -->
 <meta name="author" content="CodePixar">
 <!-- Meta Description -->
@@ -15,44 +13,100 @@
 <!-- meta character set -->
 <meta charset="UTF-8">
 <!-- Site Title -->
-<title>tracking</title>
+<title>spaya</title>
 
 <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,500" rel="stylesheet">
+<style>
+   #logo1{
+    width:390px;height: 150px;display:block;margin: 0 auto;margin-bottom:80px;
+   }
+   #logo2{
+    width:50px;height: 50px; 
+   }
+
+   .toptext{
+    cursor: pointer;
+    color: rgb(55, 71, 96);
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Benton Sans";
+    letter-spacing: 1.17px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    margin-top: 15px;
+    padding: 0px;
+    transition: color 0.2s ease 0s;
+   }
+   #f1{
+        min-width: 500px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        font-family: "Benton Sans", sans-serif;
+   }
+   #input12{
+        width:55%;
+        border: 5px solid white; 
+        border-radius: 30px;
+        border-color: aquamarine;
+    
+        padding: 15px;
+        background: rgba(255,255,255,0.5);
+        margin: 0 0 10px 0;
+
+    }
+
+
+    
+   #but{
+        margin-left:-50px;
+        margin-top: 9px;;
+        width: 40px;
+        height:40px;
+        font-family:cursive;
+        font: inherit;
+        border: 0;
+        outline: 0;
+        border-radius: 5em;
+        box-sizing: border-box;
+        background-color: white;
+   }
+   
+</style>
 {% endblock %}
 
 
 {% block body %}
 <body>
-    <section class="banner-area relative">
-        <div class="overlay overlay-bg"></div>
-        <div class="container">
-            <div class="row fullscreen align-items-center justify-content-center">
-                <div class="col-lg-10">
-                    <div class="banner-content text-center">
-                        {% if choice==1 %}
-                            <h1 class="text-white">Live Video Tracking <br>
-                            Let's get started.</h1>
-                            <p class="text-white">Tracking on a live video is challenging sometimes, but at the same time it is pleasing to watch it. <br></p>
-                            <a href="/onspot" class="primary-btn d-inline-flex align-items-center"><span class="mr-10">Go ahead</span><span class="lnr lnr-arrow-right"></span></a>
-                        {% elif choice==2 %}
-                            <h1 class="text-white">Live Video Tracking <br>
-                            Go for the options.</h1>
-                            <p class="text-white">Don't forget to crop and select the object that needs to be tracked. <br>Now, you can watch tracking over 2 different algorithms mean and cam shift.</p>
-                            <a href="/click" class="primary-btn d-inline-flex align-items-center"><span class="mr-10">Crop</span><span class="lnr lnr-arrow-right"></span></a>
-                            <a href="/crop" class="primary-btn d-inline-flex align-items-center"><span class="mr-10">View the object</span><span class="lnr lnr-arrow-right"></span></a>
-                            <a href="/mean" class="primary-btn d-inline-flex align-items-center"><span class="mr-10">Mean shift</span><span class="lnr lnr-arrow-right"></span></a>
-                            <a href="/cam" class="primary-btn d-inline-flex align-items-center"><span class="mr-10">Cam shift</span><span class="lnr lnr-arrow-right"></span></a>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div style="height:110px;display: flex;padding-left: 80%;margin-top: 30px;">
+        
+            <a class="toptext" href='/'>My retrosyntheses</a>
+            <img src="../static/img/account unselect.svg" id="logo2">  
+        
+    </div>
+    <div style="height:400px;">
+        <img src="../static/img/login.svg" id="logo1">                           
+        <form id="f1" action="/details">
+            <input id="input12" class="Inrdfb" type="text" placeholder="Enter SMILES" value="">
+            <button id="but" type="submit"  >
+                <svg width="25" height="25" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M9.61752431,11.0317379 C8.73148308,11.642436 7.65749832,12 6.5,12 C3.46243388,12 1,9.53756612 1,6.5 C1,3.46243388 3.46243388,1 6.5,1 C9.53756612,1 12,3.46243388 12,6.5 C12,7.65749832 11.642436,8.73148308 11.0317379,9.61752431 L14.7071068,13.2928932 L13.2928932,14.7071068 L9.61752431,11.0317379 Z M6.5,10 C8.43299662,10 10,8.43299662 10,6.5 C10,4.56700338 8.43299662,3 6.5,3 C4.56700338,3 3,4.56700338 3,6.5 C3,8.43299662 4.56700338,10 6.5,10 Z">
+
+                    </path>
+                </svg>
+            </button>
+        </form>
+
+    </div>
+
+    
+    
+ 
 
     <link href="{{ url_for('static', filename='css/linearicons.css') }}">
     <script src="{{ url_for('static', filename='js/vendor/jquery-2.2.4.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-    <script src="js/main.js"></script>
 
 </body>
 
