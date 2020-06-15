@@ -23,6 +23,7 @@
   window.onload = function() {
     console.log("details web page");
     var smiles = {{images|tojson}};
+    
     console.log(smiles)
     func(smiles);
   };
@@ -34,7 +35,8 @@
 
 
     function func(smiles){
-      for(var i=0;i<5;i++){
+      console.log("inside func to display all dict target and its length",smiles.length)
+      for(var i=0;i<smiles.length;i++){
         data = smiles[i];
         $(".images").append($('<a href="/next?ind='+i+'"></a>' ).html(data)) 
 

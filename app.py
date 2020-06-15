@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, request, redirect,Response,send_file
-
+# from testing.retro_project.gln.test.recur_syn import get_roots
 from pymongo import MongoClient
 import pymongo
 from pprint import pprint
@@ -27,6 +27,8 @@ from rdkit.Chem.rdDepictor import Compute2DCoords
 import json
 with open('predictions.json', "r", encoding="utf-8")  as f:
     data = json.load(f)
+# data = get_roots("predictions.json")
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -54,7 +56,7 @@ def func(pathname,pathkey,pathvalue,templateName,Id):
 @app.route('/details')
 
 def details():
-    
+
     array=[]
     for item in data["top_k"]:
         pathname = item['path']
@@ -77,24 +79,6 @@ def details():
  
 
 
-# def smiles_to_svg(smiles):
-#     molecule = MolFromSmiles(smiles)
-#     Compute2DCoords(molecule)
-#     drawer = rdMolDraw2D.MolDraw2DSVG(250, 250)
-#     drawer.DrawMolecule(molecule)
-#     drawer.FinishDrawing()
-#     return drawer.GetDrawingText()
-
-# @app.route('/c')
-# def home():
-#     return render_template('c.html')
-
-# @app.route('/c', methods=['POST'])
-# def home1():
-#     smiles = request.json.get("smiles")
-#     svg = smiles_to_svg(smiles)
-#     print(svg)
-#     return svg
 
 
 
