@@ -82,7 +82,6 @@ PyYAML==5.3
 pyzmq==19.0.1
 qtconsole==4.7.4
 QtPy==1.9.0
-rdkit==2020.03.2
 requests==2.22.0
 scipy==1.4.1
 Send2Trash==1.5.0

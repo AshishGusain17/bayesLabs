@@ -1,10 +1,6 @@
 from flask import Flask, render_template, url_for, request, redirect,Response,send_file
 # from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-import cv2
-from cam_shift import *
-from mean_shift import *
-from mouse_click_event import *
 import time
 
 
