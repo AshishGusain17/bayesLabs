@@ -34,7 +34,7 @@ jsonFileData={}
 import json
 
 @app.route('/')
-def index():
+def root():
     return render_template('index.html')
 
 
@@ -182,5 +182,5 @@ def next():
 #     return render_template('d.html')
 
 
-if __name__ == "__main__":
-    app.run(app.run(host='127.0.0.1', port=8080))
+if __name__ == '__main__':
+    app.run(host='127.0.0.1', port=8080, debug=True)
