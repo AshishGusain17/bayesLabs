@@ -6,17 +6,23 @@ from pprint import pprint
 from cachetools import cached, TTLCache
 from flask import session
 
-class Connect(object):
-    @staticmethod    
-    def get_connection():
-        return MongoClient("mongodb://user:user@34.69.67.3:27017/?authSource=temp&readPreference=primary&appname=MongoDB%20Compass&ssl=false")
-connection = Connect.get_connection()
 
 
-client = pymongo.MongoClient("mongodb://user:user@34.69.67.3:27017/?authSource=temp&readPreference=primary&appname=MongoDB%20Compass&ssl=false")
-db = client.get_database('beta')
+
+
+# class Connect(object):
+#     @staticmethod    
+#     def get_connection():
+#         return MongoClient("mongodb://user:user@34.69.67.3:27017/?authSource=temp&readPreference=primary&appname=MongoDB%20Compass&ssl=false")
+# connection = Connect.get_connection()
+
+# client = pymongo.MongoClient("mongodb://user:user@34.69.67.3:27017/?authSource=temp&readPreference=primary&appname=MongoDB%20Compass&ssl=false")
+# db=client.temp
+
+
+
 app = Flask(__name__)
-app.secret_key = "super secret key"
+# app.secret_key = "super secret key"
 
 from rdkit import Chem
 from rdkit.Chem import AllChem
@@ -36,8 +42,14 @@ def index():
 
 
 
-
-def func(pathname,pathkey,pathvalue,template,Id):
+def getTemplateId(pathkey,pathvalue,template,Id):
+    details = db.reactionSmiles.find({"headingText":"3-Bromopropyl methanesulfonate"})
+    print(details)
+    for inventory in details:
+        print(inventory['_id'])
+        # print(inventory)
+    return details
+def func(pathname,pathkey,pathvalue,template):
     template = Chem.MolFromSmarts(template)
     pathname = Chem.MolFromSmiles(pathkey)
    
@@ -77,6 +89,8 @@ def details():
         print(1,jsonFileData,1)                 # jsonFileData is the dict or json file
 
         array=[]
+        headingText=[]
+        paragraphText = []
         for item in jsonFileData["top_k"]:
             pathname = item['path']
             templateName = item['template']
@@ -85,7 +99,8 @@ def details():
             pathvalues = list(pathname.values())
             # print(pathkeys)
             # print(pathvalues)
-            image = func(pathname,pathkeys[0],pathvalues[0],templateName,Id)
+            image = func(pathname,pathkeys[0],pathvalues[0],templateName)
+            # details = getTemplateId(pathkeys[0],pathvalues[0],templateName,Id)
             array.append(image)
         # print(array)
         print("length of array for details.html",len(array))

@@ -68,14 +68,14 @@ def funcParse(xmlFile):
             obj[left] = right
 
 
-        obj["reactionSmiles"] = root[ind][1].text
+        obj["collectionName"] = root[ind][1].text
         ct = ct+1
         array.append(obj)
         print(ct)
         if ct % 50000==0:
-            db.reactionSmiles.insert_many(array)
+            db.collectionName.insert_many(array)
             array = copy.deepcopy([])
-    # db.reactionSmiles.insert_many(array)
+    # db.collectionName.insert_many(array)
 
 
 
@@ -98,7 +98,7 @@ for folderYear in pYear:
     #     break
     # break
 
-db.reactionSmiles.insert_many(array)
+db.collectionName.insert_many(array)
 # print(array)
 print(len(array))
 print("total doc=",len(array))
