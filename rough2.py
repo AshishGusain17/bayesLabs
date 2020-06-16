@@ -22,12 +22,12 @@ filename = "metabolicReactions.json"
 # with open(filename,encoding="utf-8") as f:
 # with open(filename, "rb", buffering=0) as f:
 # with open(filename,encoding='utf-8',errors='ignore') as f:
-with open(filename, "r", encoding="utf-8")  as f:
-    data = json.load(f)
+# with open(filename, "r", encoding="utf-8")  as f:
+#     data = json.load(f)
     # data = json.loads(f.read())
 
 
-print(1,data,2)
+# print(1,data,2)
 
 # dump = json.dumps(data)
 # print(3,dump,4)
