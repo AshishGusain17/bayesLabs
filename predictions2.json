@@ -1,0 +1,189 @@
+{
+    "top_k": [
+        {
+            "path": {
+                "[CH3:1][C:2]([CH3:3])([CH3:4])[O:5][C:6](=[O:7])[n:12]1[cH:11][c:10]([CH:9]=[O:8])[n:14][cH:13]1": {
+                    "CC(C)(C)OC(=O)OC(=O)OC(C)(C)C": {
+                        "CC(C)(C)O": {
+                            "CC(C)=O": {
+                                "CON(C)C(C)=O": {
+                                    "CC(=O)OC(C)=O": {
+                                        "CC(=O)Cl": {
+                                            "CCOC(=O)CC(=O)Cl": {}
+                                        },
+                                        "CC(=O)O": {
+                                            "COC(C)=O": {}
+                                        }
+                                    },
+                                    "CNOC": {}
+                                },
+                                "C[Mg+]": {}
+                            },
+                            "C[Mg+]": {}
+                        },
+                        "CC(C)(C)OC(=O)OC(=O)Cl": {
+                            "CC(C)(C)OC(=O)O": {
+                                "CCOC(=O)OC(C)(C)C": {}
+                            },
+                            "O=C(Cl)Cl": {}
+                        }
+                    },
+                    "O=Cc1c[nH]cn1": {}
+                }
+            },
+            "template": "[C;D1;H3:5]-[C:4](-[C;D1;H3:6])(-[C;D1;H3:7])-[#8:3]-[C;H0;D3;+0:1](=[O;D1;H0:2])-[n;H0;D3;+0:10]1:[c:9]:[#7;a:8]:[c:12]:[c:11]:1",
+            "score": 0.18955095,
+            "temp_id": "US07396840B2"
+        },
+        {
+            "path": {
+                "[CH3:1][C:2]([CH3:3])([CH3:4])[O:5][C:6](=[O:7])[n:12]1[cH:11][c:10]([CH:9]=[O:8])[n:14][cH:13]1": {
+                    "CC(C)(C)OC(=O)n1cnc(Br)c1": {
+                        "Brc1c[nH]cn1": {
+                            "CC(=O)n1cnc(Br)c1": {}
+                        },
+                        "CC(C)(C)OC(=O)OC(=O)OC(C)(C)C": {
+                            "CC(C)(C)O": {
+                                "CC(C)=O": {
+                                    "CON(C)C(C)=O": {
+                                        "CC(=O)OC(C)=O": {
+                                            "CC(=O)Cl": {
+                                                "CCOC(=O)CC(=O)Cl": {}
+                                            },
+                                            "CC(=O)O": {
+                                                "COC(C)=O": {}
+                                            }
+                                        },
+                                        "CNOC": {}
+                                    },
+                                    "C[Mg+]": {}
+                                },
+                                "C[Mg+]": {}
+                            },
+                            "CC(C)(C)OC(=O)OC(=O)Cl": {
+                                "CC(C)(C)OC(=O)O": {
+                                    "CCOC(=O)OC(C)(C)C": {}
+                                },
+                                "O=C(Cl)Cl": {}
+                            }
+                        }
+                    },
+                    "CN(C)C=O": {}
+                }
+            },
+            "template": "[O;D1;H0:7]=[CH;D2;+0:6]-[c;H0;D3;+0:1]1:[#7;a:2]:[c:3]:[#7;a:4]:[c:5]:1",
+            "score": 1.1716144e-07,
+            "temp_id": "US20040235822A1"
+        },
+        {
+            "path": {
+                "[CH3:1][C:2]([CH3:3])([CH3:4])[O:5][C:6](=[O:7])[n:12]1[cH:11][c:10]([CH:9]=[O:8])[n:14][cH:13]1": {
+                    "CC(C)(C)OC(=O)n1ccnc1": {
+                        "CC(C)(C)OC(=O)OC(=O)OC(C)(C)C": {
+                            "CC(C)(C)O": {
+                                "CC(C)=O": {
+                                    "CON(C)C(C)=O": {
+                                        "CC(=O)OC(C)=O": {
+                                            "CC(=O)Cl": {
+                                                "CCOC(=O)CC(=O)Cl": {}
+                                            },
+                                            "CC(=O)O": {
+                                                "COC(C)=O": {}
+                                            }
+                                        },
+                                        "CNOC": {}
+                                    },
+                                    "C[Mg+]": {}
+                                },
+                                "C[Mg+]": {}
+                            },
+                            "CC(C)(C)OC(=O)OC(=O)Cl": {
+                                "CC(C)(C)OC(=O)O": {
+                                    "CCOC(=O)OC(C)(C)C": {}
+                                },
+                                "O=C(Cl)Cl": {}
+                            }
+                        },
+                        "c1c[nH]cn1": {
+                            "CC(=O)n1ccnc1": {}
+                        }
+                    },
+                    "CN(C)C=O": {}
+                }
+            },
+            "template": "[#7;a:3]:[c:4]:[c;H0;D3;+0:5](:[#7;a:6])-[CH;D2;+0:1]=[O;D1;H0:2]",
+            "score": 1.350856e-09,
+            "temp_id": "US07186734B2"
+        },
+        {
+            "path": {
+                "[CH3:1][C:2]([CH3:3])([CH3:4])[O:5][C:6](=[O:7])[n:12]1[cH:11][c:10]([CH:9]=[O:8])[n:14][cH:13]1": {
+                    "CC(C)(C)OC(=O)Cl": {
+                        "CC(C)(C)O": {
+                            "CC(C)=O": {
+                                "CON(C)C(C)=O": {
+                                    "CC(=O)OC(C)=O": {
+                                        "CC(=O)Cl": {
+                                            "CCOC(=O)CC(=O)Cl": {}
+                                        },
+                                        "CC(=O)O": {
+                                            "COC(C)=O": {}
+                                        }
+                                    },
+                                    "CNOC": {}
+                                },
+                                "C[Mg+]": {}
+                            },
+                            "C[Mg+]": {}
+                        },
+                        "O=C(Cl)Cl": {}
+                    },
+                    "O=Cc1c[nH]cn1": {}
+                }
+            },
+            "template": "[#8:2]-[C;H0;D3;+0:1](=[O;D1;H0:3])-[n;H0;D3;+0:6]1:[c:7]:[c:8]:[#7;a:4]:[c:5]:1",
+            "score": 1.7522485e-11,
+            "temp_id": "US04017503"
+        },
+        {
+            "path": {
+                "[CH3:1][C:2]([CH3:3])([CH3:4])[O:5][C:6](=[O:7])[n:12]1[cH:11][c:10]([CH:9]=[O:8])[n:14][cH:13]1": {
+                    "CC(C)(C)OC(=O)n1cnc(I)c1": {
+                        "CC(C)(C)OC(=O)OC(=O)OC(C)(C)C": {
+                            "CC(C)(C)O": {
+                                "CC(C)=O": {
+                                    "CON(C)C(C)=O": {
+                                        "CC(=O)OC(C)=O": {
+                                            "CC(=O)Cl": {
+                                                "CCOC(=O)CC(=O)Cl": {}
+                                            },
+                                            "CC(=O)O": {
+                                                "COC(C)=O": {}
+                                            }
+                                        },
+                                        "CNOC": {}
+                                    },
+                                    "C[Mg+]": {}
+                                },
+                                "C[Mg+]": {}
+                            },
+                            "CC(C)(C)OC(=O)OC(=O)Cl": {
+                                "CC(C)(C)OC(=O)O": {
+                                    "CCOC(=O)OC(C)(C)C": {}
+                                },
+                                "O=C(Cl)Cl": {}
+                            }
+                        },
+                        "Ic1c[nH]cn1": {
+                            "Ic1nc[nH]c1I": {}
+                        }
+                    },
+                    "CN(C)C=O": {}
+                }
+            },
+            "template": "[#7;a:4]:[c;H0;D3;+0:3](:[c:5])-[CH;D2;+0:1]=[O;D1;H0:2]",
+            "score": 1.9552274e-13,
+            "temp_id": "US07977372B2"
+        }
+    ]
+}

@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
 
 {% block head %}
+
 <link rel="shortcut icon" href="#" />
 <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,500" rel="stylesheet">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/next.css') }}">
-
-
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 {% endblock %}
@@ -20,24 +19,6 @@
 
 <script>
   
-  window.onload = function() {
-    console.log("next web page");
-    var smiles = {{data|tojson}};
-    // console.log(smiles)
-    func(smiles);
-  };
-
-
-
-    function func(smiles){
-      for(var i=0;i<5;i++){
-        data = smiles[i];
-        // console.log(data)
-
-        $(".images").append($('<div class="innerTemp">' ).html(data)) 
-
-      }
-    }
 
   
 </script>
@@ -63,15 +44,57 @@
         <a id="toptext" href='/'>My retrosyntheses</a>
         <img src="../static/img/account unselect.svg" id="logo2">  
     
-      </div>
- 
+	</div>
+	<div id="templates" class="images"> </div>
+
+	{% if data1|length > 0 %}
+		{% for i in range(0,data1|length) %}
+			
+			<div id="1div{{i}}">
+				<div id="2div{{i}}"></div>
+				<form id="form{{i}}" action="/prevnext" method="GET">
+
+					<input type="hidden" name="currIndex" value="{{i}}">
+					<input type="hidden" name="currentMol" value="{{data2[i]}}">
+					<input type="hidden" name="head" value="{{head}}">
+					<input type="hidden" name="headIndex" value="{{headIndex}}">
+
+					<button  name="operation" value="Next"     type="submit"  >Next</button>
+
+				</form>
+			</div>
+			<button  name="operation" value="Previous" type="submit"  onclick="goBack()">Previous</button>
+
+		{% endfor %}
+
+	{% else %}
+		<button  name="operation" value="Previous" type="submit"  onclick="goBack()">Previous</button>
+
+		{% endif %}
+<p>{{data2}}</p>
 
 
 
-      <div id="templates" class="images"> </div>
+    <script>
+
+		function goBack() {
+			window.history.back();
+		}
 
 
 
+		console.log("next web page");
+		var data1 = {{data1|tojson}};
+		var data2 = {{data2|tojson}};
+		for(var i=0;i<data1.length;i++){
+			data = data1[i];
+			but = document.getElementById("2div"+i.toString())
+			
+			$(but).html(data)	
+		}
+
+    </script>
+          
 
 </body>
 {% endblock %}

@@ -1,6 +1,6 @@
 
 #logo1{
- width:180px;height: 180px; margin-top:-70px;
+ width:150px;height: 120px; margin-top:-30px;border-radius: 20px;
 }
 #logo2{
  width:50px;height: 50px;  margin-left:15px;
@@ -34,7 +34,7 @@
      outline: 0;
      border-radius: 5em;
      box-sizing: border-box;
-     background-color: white;
+     /* background-color: white; */
 }
 #toptext{
     padding-top:12px;
@@ -44,15 +44,33 @@
 
 
 
-#templates{
+svg{
      display:block;
      margin: 0 auto;
      justify-content: center;
-}
-.innerTemp{
-     display:block;
-     width:390px;
-     /* margin: 0 auto; */
-     justify-content: center;
+     width:60%;
+     margin-top: -5px;
      
+}
+
+.DetailsLink{
+     margin-top:0;
+     justify-content: center;
+     text-align: center;
+     color: blue;
+}
+
+.hideLeft{
+     width:35%;
+     position: absolute;
+     top:10%;
+     right:0%;
+     height:75%;
+}
+.hideRight{
+     width:35%;
+     position:absolute;
+     top:10%;
+     left:0%;
+     height:75%;
 }
