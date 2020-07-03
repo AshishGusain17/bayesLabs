@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Select an image to classify</h1>
+
+<form action="/classify/" enctype="multipart/form-data"  method="POST">
+    <input name="file" type="file" id="file-selector" accept=".jpg, .jpeg, .png">
+    <br>
+    <input type="submit" value="Submit">
+</form>
+
+
+
+ <b id="dance"></b>
+ 
+
+
+  <script>
+    const fileSelector = document.getElementById('file-selector');
+    fileSelector.addEventListener('change', (event) => {
+      const fileList = event.target.files;
+      console.log(fileList);
+    });
+
+    var idd = {{idd|tojson}};
+    if (idd == 2){
+        var name = {{name|tojson}};
+
+        svgs = document.getElementById("dance")
+        svgs.append(name) ;
+    }
+
+  </script>
+
+
+
+
+
+
+</body>
+</html>

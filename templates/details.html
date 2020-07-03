@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="shortcut icon" href="#" />
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,300,500" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', path='css/details.css') }}">
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+{% endblock %}
+
+
+
+
+
+
+{% block body %}
+
+<body >
+    <div style="display: flex; margin-top: 30px;">
+        <a href="/">
+            <img src="../static/img/retro.jpg" id="logo1" > 
+        </a>
+
+        <form id="f1" action="/details" method="GET">
+            <input id="input12"  type="text" name="molByUser" placeholder="Enter SMILES" value="">
+            <button id="but" type="submit"  >
+                <svg width="25" height="25" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M9.61752431,11.0317379 C8.73148308,11.642436 7.65749832,12 6.5,12 C3.46243388,12 1,9.53756612 1,6.5 C1,3.46243388 3.46243388,1 6.5,1 C9.53756612,1 12,3.46243388 12,6.5 C12,7.65749832 11.642436,8.73148308 11.0317379,9.61752431 L14.7071068,13.2928932 L13.2928932,14.7071068 L9.61752431,11.0317379 Z M6.5,10 C8.43299662,10 10,8.43299662 10,6.5 C10,4.56700338 8.43299662,3 6.5,3 C4.56700338,3 3,4.56700338 3,6.5 C3,8.43299662 4.56700338,10 6.5,10 Z">
+    
+                    </path>
+                </svg>
+            </button>
+        </form>
+
+        <a id="toptext" href='/'>My retrosyntheses</a>
+        <img src="../static/img/account unselect.svg" id="logo2">  
+    
+    </div>
+	<div class="images"> </div>
+	<div class="hideLeft"></div>
+	<div class="hideRight"></div>
+     
+
+      
+	<script>
+
+		function fn(index){
+			console.log("index of mol.",index)
+			document.getElementById("detLink" + index.toString()).style.display="none";
+			$.ajax({
+				method: "POST",
+				crossDomain: true,
+				contentType: 'application/json',
+				url: "/getDetails",
+				data: JSON.stringify({ index: index }),
+			})
+			.then(function (data) {
+				receivedJson = JSON.parse(data);
+				console.log(receivedJson)
+				text = receivedJson["text"]
+				
+				textTag = document.getElementById("hiddenText" + index.toString());
+				textTag.append(text)
+			})
+		}  
+
+
+		var smiles = {{images|tojson}};        
+		console.log("just loaded, checking total no. of images",smiles.length)
+		for(var i=0;i<smiles.length;i++){
+			data = smiles[i];
+			// console.log(data);
+			svgs = document.getElementsByTagName('svg');
+			$(".images").append($('<a id="mol'+i+'"  class="links" href="/next?ind='+i+'">'+svgs[i]+'</a>' ).html(data)) ;
+			$(".images").append($('<div id="hiddenText'+i+'"></div>'));
+			$(".images").append($('<p id="detLink'+i+'"  class="DetailsLink" onClick=fn('+i+')>Details</p>'));
+			$(".images").append($('<a id="getTree'+i+'"  class="getTreeLink" href="/getTree?index='+i+'">Get Tree</a>'));
+		}
+
+    </script>
+      
+
+</body>
+{% endblock %}
+

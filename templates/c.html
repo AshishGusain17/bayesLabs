@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <h1>Hello, world!</h1>
+    <div class="d-flex flex-wrap justify-content-center images"></div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <img src="PIL.PngImagePlugin.PngImageFile image mode=RGB size=300x300 at 0x1457130E308">
+    <script>
+        var smiles = [
+            "COC1=CC=C(C=C1)N1N=C(C(N)=O)C2=C1C(=O)N(CC2)C1=CC=C(C=C1)N1CCCCC1=O",
+            "CC1=CC=C(C=C1)C1=CC(=NN1C1=CC=C(C=C1)S(N)(=O)=O)C(F)(F)F",
+            
+            "[H]C(N)(COP(O)(=O)OCC([H])(COC(=O)CCC\C=C/C\C=C/C\C=C/C\C=C/C\C=C/CC)OC(=O)CCCC\C=C/C\C=C/C\C=C/C\C=C/C\C=C/CC)C(O)=O",
+            "CNC1(CCCCC1=O)C1=CC=CC=C1Cl",
+
+
+            // "[C:4]-[S;H0;D2;+0:5]-[c;H0;D3;+0:1](:[c:2]):[c:3]",
+            // "[c:1]1([S:11][CH3:10])[c:2]([C:3]#[N:4])[cH:5][c:6]([I:7])[cH:8][cH:9]1",
+            // "C[S-]",
+            // "N#Cc1cc(I)ccc1F"
+        ]
+
+        smiles.forEach((item, index) => {
+            console.log(item,index)
+            $.ajax({
+                method: "POST",
+                crossDomain: true,
+                contentType: 'application/json',
+                url: "/c",
+                data: JSON.stringify({ smiles: item }),
+            })
+            .then(function (data) {
+                console.log(1,data,1)
+                console.log($('<div>'))
+                console.log($('<div>').html(data))
+                 $(".images").append($('<div>').html(data)) 
+            })
+        })
+
+    </script>
+</body>
+
+</html>
+
+
+
+{'C[S-]': {}, 'N#Cc1cc(I)ccc1F': {}}} 
+
+
+
+
+
+
+
+{'[c:1]1([S:11][CH3:10])[c:2]([C:3]#[N:4])[cH:5][c:6]([I:7])[cH:8][cH:9]1': {'C[S-]': {}, 'N#Cc1cc(I)ccc1F': {}}}   target 
+[C;D1;H3:4]-[S;H0;D2;+0:5]-[c;H0;D3;+0:1](:[c:2]):[c:3]
+US20100184786A1
+
+
+{'[c:1]1([S:11][CH3:10])[c:2]([C:3]#[N:4])[cH:5][c:6]([I:7])[cH:8][cH:9]1': {'C[S-]': {}, 'N#Cc1cc(I)ccc1Cl': {}}}
+[C;D1;H3:4]-[S;H0;D2;+0:5]-[c;H0;D3;+0:1](:[c:2]):[c:3]
+US05686482
+
+
+
+{'[c:1]1([S:11][CH3:10])[c:2]([C:3]#[N:4])[cH:5][c:6]([I:7])[cH:8][cH:9]1': {'CS': {'CSC(C)=O': {}}, 'N#Cc1cc(I)ccc1F': {}}}
+[C:4]-[S;H0;D2;+0:5]-[c;H0;D3;+0:1](:[c:2]):[c:3]
+US07572915B2
+
+
+{'[c:1]1([S:11][CH3:10])[c:2]([C:3]#[N:4])[cH:5][c:6]([I:7])[cH:8][cH:9]1': {'CS': {'CSC(C)=O': {}}, 'N#Cc1cc(I)ccc1Cl': {}}}
+[C;D1;H3:4]-[S;H0;D2;+0:5]-[c;H0;D3;+0:1](:[c:2]):[c:3]
+US06020379
+
+
+
+{'[c:1]1([S:11][CH3:10])[c:2]([C:3]#[N:4])[cH:5][c:6]([I:7])[cH:8][cH:9]1': {'C[S-]': {}, 'N#Cc1cc(I)ccc1Br': {}}}
+[C;D1;H3:4]-[S;H0;D2;+0:5]-[c;H0;D3;+0:1](:[c:2]):[c:3]
+US20110124875A1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+details.html
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="shortcut icon" href="#" />
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,300,500" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', path='css/details.css') }}">
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+{% endblock %}
+
+
+
+
+
+
+{% block body %}
+
+
+<script>
+  
+  window.onload = function() {
+    console.log("details web page");
+    var smiles = {{images|tojson}};
+    
+    console.log(smiles)
+    func(smiles);
+  };
+
+
+
+
+  
+
+
+    function func(smiles){
+      console.log("inside func to display all dict target and its length",smiles.length)
+      for(var i=0;i<smiles.length;i++){
+        data = smiles[i];
+        $(".images").append($('<a href="/next?ind='+i+'"></a>' ).html(data)) 
+
+        // $(".images").append($('<a href="/next?ind='+i+'"><div class="innerTemp"></a>' ).html(data)) 
+      }
+    }
+
+  
+</script>
+
+
+<body>
+    <div style="display: flex; margin-top: 30px;">
+        <a href="/">
+            <img src="../static/img/login.svg" id="logo1" > 
+        </a>
+
+        <form id="f1" action="/details" method="POST">
+            <input id="input12"  type="text" name="molByUser" placeholder="Enter SMILES" value="">
+            <button id="but" type="submit"  >
+                <svg width="25" height="25" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M9.61752431,11.0317379 C8.73148308,11.642436 7.65749832,12 6.5,12 C3.46243388,12 1,9.53756612 1,6.5 C1,3.46243388 3.46243388,1 6.5,1 C9.53756612,1 12,3.46243388 12,6.5 C12,7.65749832 11.642436,8.73148308 11.0317379,9.61752431 L14.7071068,13.2928932 L13.2928932,14.7071068 L9.61752431,11.0317379 Z M6.5,10 C8.43299662,10 10,8.43299662 10,6.5 C10,4.56700338 8.43299662,3 6.5,3 C4.56700338,3 3,4.56700338 3,6.5 C3,8.43299662 4.56700338,10 6.5,10 Z">
+    
+                    </path>
+                </svg>
+            </button>
+        </form>
+
+        <a id="toptext" href='/'>My retrosyntheses</a>
+        <img src="../static/img/account unselect.svg" id="logo2">  
+    
+      </div>
+ 
+
+
+
+      <div id="templates" class="images"> </div>
+
+
+
+
+</body>
+{% endblock %}
+
